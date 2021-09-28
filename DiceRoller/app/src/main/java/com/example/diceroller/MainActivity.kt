@@ -62,6 +62,9 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
         diceImage.setImageResource(drawableResource)
+
+        // Set contentDescription to update with what is rolled
+        diceImage.contentDescription = diceRoll.toString()
     }
 }
 
