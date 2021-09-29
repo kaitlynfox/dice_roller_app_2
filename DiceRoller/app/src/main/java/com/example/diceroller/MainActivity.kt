@@ -49,14 +49,19 @@ class MainActivity : AppCompatActivity() {
      */
     private fun rollDice() {
         // Create new Dice object with 6 sides and roll it
-        val dice = Dice(6)
-        val diceRoll = dice.roll()
+        val dice_1 = Dice(6)
+        val diceRoll_1 = dice_1.roll()
+
+        // Create another Dice object with 6 sides and roll it
+        val dice_2 = Dice(6)
+        val diceRoll_2 = dice_2.roll()
 
         // Find the the specific ImageView to update
-        val diceImage: ImageView = findViewById(R.id.dice_image_view)
+        val diceImage_1: ImageView = findViewById(R.id.dice_1_image_view)
+        val diceImage_2: ImageView = findViewById(R.id.dice_2_image_view)
 
-        // Update the ImageView with specific drawable when a certain number is rolled
-        val drawableResource = when (diceRoll) {
+        // Update the 1st ImageView with specific drawable when a certain number is rolled
+        val drawableResource_1 = when (diceRoll_1) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
@@ -64,10 +69,28 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-        diceImage.setImageResource(drawableResource)
+        // Update the ImageView with the appropriate dice image
+        diceImage_1.setImageResource(drawableResource_1)
 
         // Set contentDescription to update with what is rolled
-        diceImage.contentDescription = diceRoll.toString()
+        diceImage_1.contentDescription = diceRoll_1.toString()
+
+
+        // Update the 2nd ImageView with specific drawable when a certain number is rolled
+        val drawableResource_2 = when (diceRoll_2) {
+            1 -> R.drawable.dice_1
+            2 -> R.drawable.dice_2
+            3 -> R.drawable.dice_3
+            4 -> R.drawable.dice_4
+            5 -> R.drawable.dice_5
+            else -> R.drawable.dice_6
+        }
+
+        // Update the ImageView with the appropriate dice image
+        diceImage_2.setImageResource(drawableResource_2)
+
+        // Set contentDescription to update with what is rolled
+        diceImage_2.contentDescription = diceRoll_2.toString()
     }
 }
 
