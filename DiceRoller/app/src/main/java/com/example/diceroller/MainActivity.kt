@@ -75,7 +75,6 @@ class MainActivity : AppCompatActivity() {
         // Set contentDescription to update with what is rolled
         diceImage_1.contentDescription = diceRoll_1.toString()
 
-
         // Update the 2nd ImageView with specific drawable when a certain number is rolled
         val drawableResource_2 = when (diceRoll_2) {
             1 -> R.drawable.dice_1
